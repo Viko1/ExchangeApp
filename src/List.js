@@ -12,7 +12,8 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import './Currency.css'
 
-
+const useStyles = makeStyles((theme) => ({
+}));
 
 function not(a, b) {
   return a.filter((value) => b.indexOf(value) === -1);
