@@ -90,7 +90,7 @@ export default function TransferList(props) {
       />
       <Divider />
       <List className={classes.list} dense component="div" role="list">
-        {items.map((value, props) => {
+        {items.map((value) => {
           const labelId = `transfer-list-all-item-${value}-label`;
 
           return (
