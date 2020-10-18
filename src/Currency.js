@@ -22,7 +22,7 @@ function Currency() {
 
    return (
       <div className='currency'>
-         <TransferList currency={currency}/>
+         <TransferList currency={currencyItem}/>
       </div>
    )
 
