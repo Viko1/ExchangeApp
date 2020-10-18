@@ -1,7 +1,45 @@
-.currency__items li {
-    list-style: none;
+body {
+    background: #DAE2F8; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D6A4A4, #DAE2F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .currency {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+}
 
+.currency__items {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: 15px;
+    font-weight: bolder;
+    align-items: center;
+    flex: 0 1 calc(20% - 8px);
+    column-count: 3;
+    justify-content: center;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    margin: 12px;
+}
+
+.currency__items:hover {
+    cursor: pointer;
+    background-color: #7594ff;
+}
+
+root {
+    margin: auto;
+}
+
+.cardheader{
+    padding: 1px;
+}
+
+.list {
+    width: 400px;
+    height: 460px;
+    background-color: white;
+    overflow: auto;
 }

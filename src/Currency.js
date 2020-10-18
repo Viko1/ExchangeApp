@@ -1,42 +1,31 @@
-import React, {Component} from 'react';
-import "./Currency.css"
-import axios from "axios";
-
-
-const api = axios.create({
-});
-
-
-class Currency extends Component {
-
-   state = {
-      currencies: []
-   };
+import React, {useState, useEffect} from 'react'
+import axios from './axios'
+import './Currency.css'
+import TransferList from "./List";
 
 
 
-   constructor() {
-      super();
-      this.getCurrency()
-   }
+function Currency() {
+   const [currency, setCurency] = useState([]);
 
-   getCurrency = async () => {
-      let data = await api.get('http://api.nbp.pl/api/exchangerates/tables/a/').then(({data}) => data);
-         this.setState({currencies: data[0].rates});
-         console.log(data)
-      };
+   useEffect(() => {
+      // kiedy mamay na koncu [], to tylko 1 raz wykonuje
+      async function fetchData() {
+         const request = await axios.get('/')
+         setCurency(request.data[0].rates)
+      }
 
+      fetchData()
+   }, []);
 
-   render() {
-      return (
-         <div>
-            {this.state.currencies.map(currency => <div>{currency.currency}</div>)}
-            {this.state.currencies.map(currency => <div>{currency.mid}</div>)}
-            {this.state.currencies.map(currency => <div>{currency.code}</div>)}
-         </div>
+   const currencyItem = currency.map(currency => (<li className='currency__items' key={currency.id}>{currency.currency}{currency.mid}zl</li>));
 
-      );
-   }
+   return (
+      <div className='currency'>
+         <TransferList currency={currency}/>
+      </div>
+   )
+
 }
 
 export default Currency;

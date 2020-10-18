@@ -5,12 +5,12 @@ import Currency from "./Currency";
 function App() {
   return (
     <div className="App">
-      <div>
-        <h1>
-          hello world
-         <Currency/>
+        <h1 className='App__name'>
+          Follow today's currency
         </h1>
-      </div>
+       <Currency/>
+       <h1 className='App__name'>
+       </h1>
     </div>
   );
 }
